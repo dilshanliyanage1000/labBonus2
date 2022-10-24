@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a6Z-31-hoa">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Date Picker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DatePickerViewController" customModule="labBonus2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="JCN-BT-RVz">
+                                <rect key="frame" x="39" y="172" width="320" height="155"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="662727600">
+                                    <!--2022-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="725713200">
+                                    <!--2023-12-31 11:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_CA"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPD-St-8bb">
+                                <rect key="frame" x="58" y="361" width="139" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select"/>
+                                <connections>
+                                    <action selector="SelectButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTj-so-8R9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JCN-BT-RVz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="3l3-7u-WDG"/>
+                            <constraint firstItem="JCN-BT-RVz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="113" id="MT4-yD-b7u"/>
+                            <constraint firstItem="XPD-St-8bb" firstAttribute="top" secondItem="JCN-BT-RVz" secondAttribute="bottom" constant="34" id="NQu-nF-dVL"/>
+                            <constraint firstItem="XPD-St-8bb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="bdR-rE-l3L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JCN-BT-RVz" secondAttribute="bottom" constant="522" id="mk0-d9-VIB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XPD-St-8bb" secondAttribute="trailing" constant="233" id="owC-8E-qZ8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Date Picker" image="calendar" catalog="system" id="sKJ-Hh-kcF"/>
+                    <connections>
+                        <outlet property="DatePickerControl" destination="JCN-BT-RVz" id="ZrD-qy-PlY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209.7674418604652" y="-395.27896995708159"/>
+        </scene>
+        <!--Multi Picker-->
+        <scene sceneID="b9x-j5-KO6">
+            <objects>
+                <viewController id="AUa-5I-zh1" customClass="MultiComponentPickerViewController" customModule="labBonus2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fo3-iL-XJc">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAS-fo-JOK">
+                                <rect key="frame" x="20" y="158" width="390" height="218"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="AUa-5I-zh1" id="cad-UC-DOh"/>
+                                    <outlet property="delegate" destination="AUa-5I-zh1" id="H2V-Ae-YYh"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7h-oP-MY9">
+                                <rect key="frame" x="20" y="449" width="127.66666666666669" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select Option"/>
+                                <connections>
+                                    <action selector="SelectOptionButton_Pressed:" destination="AUa-5I-zh1" eventType="touchUpInside" id="jnK-UE-j2f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Njo-Ws-7Tr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hAS-fo-JOK" firstAttribute="leading" secondItem="A7h-oP-MY9" secondAttribute="leading" id="4hS-nl-x9F"/>
+                            <constraint firstItem="hAS-fo-JOK" firstAttribute="top" secondItem="Njo-Ws-7Tr" secondAttribute="top" constant="99" id="FD9-pp-WnS"/>
+                            <constraint firstItem="Njo-Ws-7Tr" firstAttribute="bottom" secondItem="hAS-fo-JOK" secondAttribute="bottom" constant="473" id="FRT-Cq-al5"/>
+                            <constraint firstItem="Njo-Ws-7Tr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A7h-oP-MY9" secondAttribute="trailing" symbolic="YES" id="Ryd-zr-wUd"/>
+                            <constraint firstItem="hAS-fo-JOK" firstAttribute="leading" secondItem="fo3-iL-XJc" secondAttribute="leadingMargin" id="YsK-ys-z1B"/>
+                            <constraint firstItem="A7h-oP-MY9" firstAttribute="top" secondItem="hAS-fo-JOK" secondAttribute="bottom" constant="73" id="dwq-MA-nFN"/>
+                            <constraint firstItem="hAS-fo-JOK" firstAttribute="trailing" secondItem="fo3-iL-XJc" secondAttribute="trailingMargin" id="hv2-oq-gsi"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Multi Picker" image="list.bullet.rectangle.fill" catalog="system" id="tf7-Fe-kg0"/>
+                    <connections>
+                        <outlet property="MultiPickerControl" destination="hAS-fo-JOK" id="Zby-fn-hKJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gtK-vf-N7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209.7674418604652" y="292.91845493562232"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="HBx-mc-rtq">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="a6Z-31-hoa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3PO-W8-29T">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ScA-Rx-PAb"/>
+                        <segue destination="AUa-5I-zh1" kind="relationship" relationship="viewControllers" id="B7j-Tn-vMQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X7m-Vs-bPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.65116279069767" y="-28.326180257510732"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="list.bullet.rectangle.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
